@@ -10,10 +10,13 @@ javac DivisoresColeta.java
 SETLOCAL ENABLEDELAYEDEXPANSION
 SET res = 0
 
+Echo c>>resultados-c.csv
+Echo java>>resultados-java.csv
+
 for /l %%x in (1, 1, 10) do (
 
 	echo rodada %%x
-	SET /A res = 10000000 * %%x
+	SET /A res = 100000000 * %%x
 
 	divisores-coleta !res!>>resultados-c.csv
 	java DivisoresColeta !res!>>resultados-java.csv
